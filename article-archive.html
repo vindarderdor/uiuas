@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Store - Article Archive</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/adidas-logo.png" alt="Adidas Logo">
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html" class="active">Articles</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="nav-mobile">
+      <div class="nav-mobile-header">
+        <div class="logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+        </div>
+        <button class="nav-mobile-close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product-catalog.html">Products</a></li>
+        <li><a href="article-archive.html" class="active">Articles</a></li>
+        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Article Archive</h1>
+      <p>Stay updated with the latest news and stories from Adidas</p>
+      <button class="btn d-lg-none mt-3" id="filter-toggle">
+        <i class="fas fa-filter"></i> Show Filters
+      </button>
+    </div>
+  </section>
+
+  <section class="article-archive">
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+          <div class="archive-sidebar">
+            <div class="search-box mb-4">
+              <input type="text" placeholder="Search articles..." id="article-search">
+              <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-section mb-4">
+              <h3>Categories</h3>
+              <ul class="filter-list">
+                <li><a href="#" data-category="all" class="active">All Articles</a></li>
+                <li><a href="#" data-category="history">History</a></li>
+                <li><a href="#" data-category="technology">Technology</a></li>
+                <li><a href="#" data-category="sustainability">Sustainability</a></li>
+                <li><a href="#" data-category="sports">Sports</a></li>
+                <li><a href="#" data-category="lifestyle">Lifestyle</a></li>
+              </ul>
+            </div>
+            <div class="filter-section mb-4">
+              <h3>Recent Posts</h3>
+              <ul class="recent-posts">
+                <li><a href="article-detail.html?id=1">The History of Adidas</a></li>
+                <li><a href="article-detail.html?id=2">Adidas Boost Technology</a></li>
+                <li><a href="article-detail.html?id=3">Adidas Sustainability Initiatives</a></li>
+                <li><a href="article-detail.html?id=4">Top Athletes Sponsored by Adidas</a></li>
+                <li><a href="article-detail.html?id=5">Adidas in Pop Culture</a></li>
+              </ul>
+            </div>
+            <div class="filter-section">
+              <h3>Tags</h3>
+              <div class="tag-cloud">
+                <a href="#" class="tag">Adidas</a>
+                <a href="#" class="tag">Shoes</a>
+                <a href="#" class="tag">Running</a>
+                <a href="#" class="tag">Boost</a>
+                <a href="#" class="tag">Sustainability</a>
+                <a href="#" class="tag">Sports</a>
+                <a href="#" class="tag">Fashion</a>
+                <a href="#" class="tag">History</a>
+                <a href="#" class="tag">Technology</a>
+                <a href="#" class="tag">Athletes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Articles -->
+        <div class="col-12 col-lg-9">
+          <div class="archive-articles">
+            <div class="article-grid" id="article-grid">
+              <div class="article-card">
+                <div class="article-image">
+                  <img src="https://i.pinimg.com/736x/4a/fc/99/4afc990a926bdc1d0525236a928d21a7.jpg" alt="Adidas History">
+                </div>
+                <div class="article-info">
+                  <div class="article-meta">
+                    <span class="article-category">History</span>
+                    <span class="article-date">May 15, 2025</span>
+                  </div>
+                  <h3>The History of Adidas</h3>
+                  <p>Learn about the rich history of Adidas and how it became one of the world's leading sportswear brands.</p>
+                  <a href="article-detail.html?id=1" class="btn-read">Read More</a>
+                </div>
+              </div>
+              <div class="article-card">
+                <div class="article-image">
+                  <img src="https://i.pinimg.com/736x/89/2e/4c/892e4cfc22357252177bd2af8de0e49b.jpg" alt="Adidas Technology">
+                </div>
+                <div class="article-info">
+                  <div class="article-meta">
+                    <span class="article-category">Technology</span>
+                    <span class="article-date">May 10, 2025</span>
+                  </div>
+                  <h3>Adidas Boost Technology</h3>
+                  <p>Discover how Adidas revolutionized running shoes with their innovative Boost technology.</p>
+                  <a href="article-detail.html?id=2" class="btn-read">Read More</a>
+                </div>
+              </div>
+              <div class="article-card">
+                <div class="article-image">
+                  <img src="https://i.pinimg.com/736x/55/ff/33/55ff3308362b89f96610fcde567beed4.jpg" alt="Adidas Sustainability">
+                </div>
+                <div class="article-info">
+                  <div class="article-meta">
+                    <span class="article-category">Sustainability</span>
+                    <span class="article-date">May 5, 2025</span>
+                  </div>
+                  <h3>Adidas Sustainability Initiatives</h3>
+                  <p>Explore how Adidas is working towards a more sustainable future in sportswear manufacturing.</p>
+                  <a href="article-detail.html?id=3" class="btn-read">Read More</a>
+                </div>
+              </div>
+              <div class="article-card">
+                <div class="article-image">
+                  <img src="https://i.pinimg.com/736x/26/56/a6/2656a60e9d9281e179054cf53b550c1a.jpg" alt="Adidas Athletes">
+                </div>
+                <div class="article-info">
+                  <div class="article-meta">
+                    <span class="article-category">Sports</span>
+                    <span class="article-date">April 28, 2025</span>
+                  </div>
+                  <h3>Top Athletes Sponsored by Adidas</h3>
+                  <p>Meet the world-class athletes who represent the Adidas brand in various sports around the globe.</p>
+                  <a href="article-detail.html?id=4" class="btn-read">Read More</a>
+                </div>
+              </div>
+              <div class="article-card">
+                <div class="article-image">
+                  <img src="https://i.pinimg.com/736x/89/fd/88/89fd8807158660e29a6f4dfda9395302.jpg" alt="Adidas Pop Culture">
+                </div>
+                <div class="article-info">
+                  <div class="article-meta">
+                    <span class="article-category">Lifestyle</span>
+                    <span class="article-date">April 20, 2025</span>
+                  </div>
+                  <h3>Adidas in Pop Culture</h3>
+                  <p>From Run-DMC to Kanye West, explore the influence of Adidas in music, fashion, and popular culture.</p>
+                  <a href="article-detail.html?id=5" class="btn-read">Read More</a>
+                </div>
+              </div>
+              <div class="article-card">
+                <div class="article-image">
+                  <img src="https://i.pinimg.com/736x/9a/6c/94/9a6c94ea447203bb36a655ff2e94f850.jpg" alt="Adidas Originals">
+                </div>
+                <div class="article-info">
+                  <div class="article-meta">
+                    <span class="article-category">Fashion</span>
+                    <span class="article-date">April 15, 2025</span>
+                  </div>
+                  <h3>The Evolution of Adidas Originals</h3>
+                  <p>How Adidas Originals became a fashion staple and continues to influence streetwear trends.</p>
+                  <a href="article-detail.html?id=6" class="btn-read">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="pagination mt-4">
+              <button class="btn-page" data-page="prev"><i class="fas fa-chevron-left"></i></button>
+              <div class="page-numbers">
+                <button class="btn-page active" data-page="1">1</button>
+                <button class="btn-page" data-page="2">2</button>
+                <button class="btn-page" data-page="3">3</button>
+              </div>
+              <button class="btn-page" data-page="next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/adidas-logo-white.png" alt="Adidas Logo">
+          <p>IMPOSSIBLE IS NOTHING</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="transaction-history.html">Order History</a></li>
+            <li><a href="#">Store Locator</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adidas Store. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/articles.js"></script>
+  <script>
+    // Mobile filter toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterToggle = document.getElementById('filter-toggle');
+      const sidebar = document.querySelector('.archive-sidebar');
+      
+      if (filterToggle && sidebar) {
+        filterToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('show-mobile');
+          filterToggle.textContent = sidebar.classList.contains('show-mobile') ? 
+            '✕ Hide Filters' : 
+            '☰ Show Filters';
+        });
+      }
+    });
+  </script>
+
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMobile = document.getElementById('nav-mobile');
+      const navClose = document.getElementById('nav-close');
+      const navOverlay = document.getElementById('nav-overlay');
+      
+      // Open mobile menu
+      menuToggle.addEventListener('click', function() {
+        navMobile.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Close mobile menu
+      function closeMenu() {
+        navMobile.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      navClose.addEventListener('click', closeMenu);
+      navOverlay.addEventListener('click', closeMenu);
+      
+      // Close menu on window resize if screen becomes large
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

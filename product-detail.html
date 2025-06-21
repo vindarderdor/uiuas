@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Store - Product Detail</title>
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/adidas-logo.png" alt="Adidas Logo">
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html" class="active">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="nav-mobile">
+      <div class="nav-mobile-header">
+        <div class="logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+        </div>
+        <button class="nav-mobile-close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product-catalog.html" class="active">Products</a></li>
+        <li><a href="article-archive.html">Articles</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <section class="product-detail py-5">
+    <div class="container">
+      <div class="breadcrumb mb-4">
+        <a href="index.html">Home</a> / 
+        <a href="product-catalog.html">Products</a> / 
+        <span id="product-name">Adidas Ultraboost 22</span>
+      </div>
+      
+      <div class="row">
+        <!-- Product Gallery -->
+        <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+          <div class="product-gallery">
+            <div class="main-image">
+              <img id="main-product-image" src="https://i.pinimg.com/736x/30/da/4a/30da4a5589496e9247ea87cb7aeb9112.jpg" alt="Adidas Ultraboost 22">
+            </div>
+            <div class="thumbnail-images">
+              <div class="thumbnail active" data-image="images/product1.jpg">
+                <img src="https://i.pinimg.com/736x/30/da/4a/30da4a5589496e9247ea87cb7aeb9112.jpg" alt="Thumbnail 1">
+              </div>
+              <div class="thumbnail" data-image="images/product1-2.jpg">
+                <img src="https://i.pinimg.com/736x/34/20/b0/3420b0406ea950f3397e4094efb116a7.jpg" alt="Thumbnail 2">
+              </div>
+              <div class="thumbnail" data-image="images/product1-3.jpg">
+                <img src="https://i.pinimg.com/736x/84/a4/0d/84a40d5a478fe156c6ecf3bfd7227b0c.jpg" alt="Thumbnail 3">
+              </div>
+              <div class="thumbnail" data-image="images/product1-4.jpg">
+                <img src="https://i.pinimg.com/736x/84/a4/0d/84a40d5a478fe156c6ecf3bfd7227b0c.jpg" alt="Thumbnail 4">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Info -->
+        <div class="col-12 col-lg-6">
+          <div class="product-info">
+            <h1 id="detail-product-name">Adidas Ultraboost 22</h1>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span>4.5 (120 reviews)</span>
+            </div>
+            <p class="product-price" id="detail-product-price">$180</p>
+            <div class="product-description">
+              <p id="detail-product-description">Experience the ultimate in comfort and performance with the Adidas Ultraboost 22. Featuring responsive Boost cushioning and a Primeknit upper that adapts to your foot for a perfect fit. The Continental™ Rubber outsole provides extraordinary grip in wet and dry conditions.</p>
+            </div>
+            
+            <div class="product-options">
+              <div class="size-selection">
+                <h3>Select Size</h3>
+                <div class="size-options">
+                  <button class="size-option">7</button>
+                  <button class="size-option">7.5</button>
+                  <button class="size-option">8</button>
+                  <button class="size-option">8.5</button>
+                  <button class="size-option">9</button>
+                  <button class="size-option">9.5</button>
+                  <button class="size-option">10</button>
+                  <button class="size-option">10.5</button>
+                  <button class="size-option">11</button>
+                </div>
+              </div>
+              
+              <div class="color-selection">
+                <h3>Select Color</h3>
+                <div class="color-options">
+                  <button class="color-option" style="background-color: #000;" data-color="Black"></button>
+                  <button class="color-option" style="background-color: #fff; border: 1px solid #ddd;" data-color="White"></button>
+                  <button class="color-option" style="background-color: #3498db;" data-color="Blue"></button>
+                  <button class="color-option" style="background-color: #e74c3c;" data-color="Red"></button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="product-actions">
+              <div class="quantity">
+                <button class="qty-btn" id="decrease-qty">-</button>
+                <input type="number" value="1" min="1" id="product-quantity">
+                <button class="qty-btn" id="increase-qty">+</button>
+              </div>
+              <button class="btn btn-add-cart" id="add-to-cart">Add to Cart</button>
+              <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            </div>
+            
+            <div class="product-meta">
+              <p><strong>SKU:</strong> <span id="product-sku">ADS-UB22-BLK</span></p>
+              <p><strong>Category:</strong> <span id="product-category">Running Shoes</span></p>
+              <p><strong>Tags:</strong> <span id="product-tags">Ultraboost, Running, Performance</span></p>
+            </div>
+            
+            <div class="product-share">
+              <p>Share:</p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product Tabs -->
+      <div class="product-tabs mt-5">
+        <div class="tab-headers">
+          <button class="tab-header active" data-tab="description">Description</button>
+          <button class="tab-header" data-tab="specifications">Specifications</button>
+          <button class="tab-header" data-tab="reviews">Reviews</button>
+        </div>
+        
+        <div class="tab-content">
+          <div class="tab-panel active" id="description">
+            <p>The Adidas Ultraboost 22 is designed to give you the ultimate running experience. The responsive Boost midsole returns energy with every step, while the Primeknit upper adapts to your foot for a comfortable and supportive fit.</p>
+            <p>The shoe features:</p>
+            <ul>
+              <li>Primeknit upper for adaptive support and comfort</li>
+              <li>Boost midsole for responsive cushioning</li>
+              <li>Continental™ Rubber outsole for extraordinary grip</li>
+              <li>Weight: 10.9 oz (size 9)</li>
+              <li>Midsole drop: 10 mm (heel: 22 mm / forefoot: 12 mm)</li>
+            </ul>
+          </div>
+          
+          <div class="tab-panel" id="specifications">
+            <div class="table-responsive">
+              <table class="specs-table">
+                <tr>
+                  <th>Material</th>
+                  <td>Primeknit textile upper / Rubber outsole</td>
+                </tr>
+                <tr>
+                  <th>Weight</th>
+                  <td>10.9 oz (size 9)</td>
+                </tr>
+                <tr>
+                  <th>Midsole Drop</th>
+                  <td>10 mm (heel: 22 mm / forefoot: 12 mm)</td>
+                </tr>
+                <tr>
+                  <th>Arch Type</th>
+                  <td>Neutral</td>
+                </tr>
+                <tr>
+                  <th>Lining</th>
+                  <td>Textile</td>
+                </tr>
+                <tr>
+                  <th>Closure</th>
+                  <td>Lace-up</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <div class="tab-panel" id="reviews">
+            <div class="row">
+              <div class="col-12 col-md-4 mb-4 mb-md-0">
+                <div class="review-summary">
+                  <div class="review-average text-center">
+                    <h3>4.5</h3>
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>Based on 120 reviews</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-12 col-md-8">
+                <div class="review-breakdown">
+                  <div class="review-bar">
+                    <span>5 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 70%;"></div>
+                    </div>
+                    <span>70%</span>
+                  </div>
+                  <div class="review-bar">
+                    <span>4 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 20%;"></div>
+                    </div>
+                    <span>20%</span>
+                  </div>
+                  <div class="review-bar">
+                    <span>3 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 7%;"></div>
+                    </div>
+                    <span>7%</span>
+                  </div>
+                  <div class="review-bar">
+                    <span>2 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 2%;"></div>
+                    </div>
+                    <span>2%</span>
+                  </div>
+                  <div class="review-bar">
+                    <span>1 star</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 1%;"></div>
+                    </div>
+                    <span>1%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="review-list mt-5">
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <h4>John D.</h4>
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                  </div>
+                  <span class="review-date">May 10, 2025</span>
+                </div>
+                <div class="review-content">
+                  <p>These are the most comfortable running shoes I've ever owned. The Boost technology really makes a difference on long runs. Highly recommend!</p>
+                </div>
+              </div>
+              
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <h4>Sarah M.</h4>
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <span class="review-date">April 28, 2025</span>
+                </div>
+                <div class="review-content">
+                  <p>Great shoes overall, but I found them to run a bit small. I would recommend going up half a size. The cushioning is excellent though!</p>
+                </div>
+              </div>
+              
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <h4>Michael T.</h4>
+                    <div class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </div>
+                  </div>
+                  <span class="review-date">April 15, 2025</span>
+                </div>
+                <div class="review-content">
+                  <p>I've been using these for both running and casual wear. They're versatile and extremely comfortable. The Continental outsole provides excellent grip even in wet conditions.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="write-review mt-5">
+              <h3>Write a Review</h3>
+              <form id="review-form">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="review-name">Name</label>
+                      <input type="text" id="review-name" required>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="review-email">Email</label>
+                      <input type="email" id="review-email" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label>Rating</label>
+                  <div class="rating-select">
+                    <i class="far fa-star" data-rating="1"></i>
+                    <i class="far fa-star" data-rating="2"></i>
+                    <i class="far fa-star" data-rating="3"></i>
+                    <i class="far fa-star" data-rating="4"></i>
+                    <i class="far fa-star" data-rating="5"></i>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="review-content">Review</label>
+                  <textarea id="review-content" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Submit Review</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Related Products -->
+      <section class="related-products mt-5">
+        <h2 class="text-center mb-4">You May Also Like</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="images/product2.jpg" alt="Adidas Superstar">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=2" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas Superstar</h3>
+              <p class="price">$90</p>
+              <button class="btn-add-cart" data-id="2">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-image">
+              <img src="images/product3.jpg" alt="Adidas NMD">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=3" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas NMD R1</h3>
+              <p class="price">$140</p>
+              <button class="btn-add-cart" data-id="3">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-image">
+              <img src="images/product4.jpg" alt="Adidas Stan Smith">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=4" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas Stan Smith</h3>
+              <p class="price">$85</p>
+              <button class="btn-add-cart" data-id="4">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-image">
+              <img src="images/product5.jpg" alt="Adidas Gazelle">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=5" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas Gazelle</h3>
+              <p class="price">$100</p>
+              <button class="btn-add-cart" data-id="5">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+          <p>IMPOSSIBLE IS NOTHING</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="transaction-history.html">Order History</a></li>
+            <li><a href="#">Store Locator</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adidas Store. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Navigation for Mobile -->
+  <div class="bottom-nav d-block d-lg-none">
+    <a href="index.html" class="bottom-nav-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="product-catalog.html" class="bottom-nav-item active">
+      <i class="fas fa-box"></i>
+      <span>Products</span>
+    </a>
+    <a href="article-archive.html" class="bottom-nav-item">
+      <i class="fas fa-newspaper"></i>
+      <span>Articles</span>
+    </a>
+    <a href="cart.html" class="bottom-nav-item">
+      <i class="fas fa-shopping-cart"></i>
+      <span>Cart</span>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMobile = document.getElementById('nav-mobile');
+      const navClose = document.getElementById('nav-close');
+      const navOverlay = document.getElementById('nav-overlay');
+      
+      // Open mobile menu
+      menuToggle.addEventListener('click', function() {
+        navMobile.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Close mobile menu
+      function closeMenu() {
+        navMobile.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      navClose.addEventListener('click', closeMenu);
+      navOverlay.addEventListener('click', closeMenu);
+      
+      // Product Gallery
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      const mainImage = document.getElementById('main-product-image');
+      
+      if (thumbnails.length > 0 && mainImage) {
+        thumbnails.forEach(thumbnail => {
+          thumbnail.addEventListener('click', function() {
+            // Remove active class from all thumbnails
+            thumbnails.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked thumbnail
+            this.classList.add('active');
+            
+            // Update main image
+            const imageUrl = this.getAttribute('data-image');
+            mainImage.src = imageUrl;
+          });
+        });
+      }
+      
+      // Size Selection
+      const sizeOptions = document.querySelectorAll('.size-option');
+      
+      if (sizeOptions.length > 0) {
+        sizeOptions.forEach(option => {
+          option.addEventListener('click', function() {
+            // Remove active class from all size options
+            sizeOptions.forEach(o => o.classList.remove('active'));
+            
+            // Add active class to clicked option
+            this.classList.add('active');
+          });
+        });
+      }
+      
+      // Color Selection
+      const colorOptions = document.querySelectorAll('.color-option');
+      
+      if (colorOptions.length > 0) {
+        colorOptions.forEach(option => {
+          option.addEventListener('click', function() {
+            // Remove active class from all color options
+            colorOptions.forEach(o => o.classList.remove('active'));
+            
+            // Add active class to clicked option
+            this.classList.add('active');
+          });
+        });
+      }
+      
+      // Product Tabs
+      const tabHeaders = document.querySelectorAll('.tab-header');
+      const tabPanels = document.querySelectorAll('.tab-panel');
+      
+      if (tabHeaders.length > 0) {
+        tabHeaders.forEach(header => {
+          header.addEventListener('click', function() {
+            // Remove active class from all headers and panels
+            tabHeaders.forEach(h => h.classList.remove('active'));
+            tabPanels.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked header
+            this.classList.add('active');
+            
+            // Show corresponding panel
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+          });
+        });
+      }
+      
+      // Rating Selection
+      const ratingStars = document.querySelectorAll('.rating-select i');
+      
+      if (ratingStars.length > 0) {
+        ratingStars.forEach(star => {
+          star.addEventListener('click', function() {
+            const rating = parseInt(this.getAttribute('data-rating'));
+            
+            // Update stars
+            ratingStars.forEach((s, index) => {
+              if (index < rating) {
+                s.classList.remove('far');
+                s.classList.add('fas');
+              } else {
+                s.classList.remove('fas');
+                s.classList.add('far');
+              }
+            });
+          });
+          
+          // Hover effect
+          star.addEventListener('mouseenter', function() {
+            const rating = parseInt(this.getAttribute('data-rating'));
+            
+            ratingStars.forEach((s, index) => {
+              if (index < rating) {
+                s.classList.remove('far');
+                s.classList.add('fas');
+              } else {
+                s.classList.remove('fas');
+                s.classList.add('far');
+              }
+            });
+          });
+        });
+        
+        // Reset on mouse leave
+        const ratingSelect = document.querySelector('.rating-select');
+        if (ratingSelect) {
+          ratingSelect.addEventListener('mouseleave', function() {
+            // Find selected rating
+            const selected = document.querySelector('.rating-select i.selected');
+            const rating = selected ? parseInt(selected.getAttribute('data-rating')) : 0;
+            
+            ratingStars.forEach((s, index) => {
+              if (index < rating) {
+                s.classList.remove('far');
+                s.classList.add('fas');
+              } else {
+                s.classList.remove('fas');
+                s.classList.add('far');
+              }
+            });
+          });
+        }
+      }
+    });
+  </script>
+  <script src="js/product-detail.js"></script>
+</body>
+</html>

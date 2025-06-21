@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Store - Transaction History</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+  <div class="container">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+        </a>
+      </div>
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product-catalog.html">Products</a></li>
+          <li><a href="article-archive.html">Articles</a></li>
+          <li><a href="cart.html" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+          </a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <div class="nav-mobile">
+    <div class="nav-mobile-header">
+      <div class="logo">
+        <img src="images/adidas-logo.png" alt="Adidas Logo">
+      </div>
+      <button class="nav-mobile-close" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product-catalog.html">Products</a></li>
+      <li><a href="article-archive.html">Articles</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="transaction-history.html" class="active">Transaction History</a></li>
+      <li><a href="wishlist.html">Wishlist</a></li>
+    </ul>
+  </div>
+  <div class="nav-overlay"></div>
+</header>
+
+  <section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / <span>Transaction History</span>
+    </div>
+    <h1>Transaction History</h1>
+    <p>View and manage your recent orders and purchases</p>
+  </div>
+</section>
+
+<section class="account-section">
+  <div class="container">
+    <!-- Stats Overview -->
+    <div class="stats-overview">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div class="stat-info">
+          <h3>12</h3>
+          <p>Total Orders</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <div class="stat-info">
+          <h3>3</h3>
+          <p>In Transit</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="stat-info">
+          <h3>8</h3>
+          <p>Delivered</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <div class="stat-info">
+          <h3>$1,247</h3>
+          <p>Total Spent</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Account Sidebar - Mobile Collapsible -->
+      <div class="col-12 d-block d-lg-none mb-4">
+        <div class="mobile-account-header" id="account-menu-toggle">
+          <div class="user-info-compact">
+            <div class="user-avatar-small">
+              <img src="images/user-avatar.jpg" alt="User Avatar">
+              <div class="online-indicator"></div>
+            </div>
+            <div class="user-details">
+              <h3>Guest User</h3>
+              <p>Premium Member</p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="mobile-account-menu" id="mobile-account-menu">
+          <ul class="account-menu">
+            <li><a href="transaction-history.html" class="active"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile Settings</a></li>
+            <li><a href="addresses.html"><i class="fas fa-map-marker-alt"></i> Addresses</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Account Sidebar - Desktop -->
+      <div class="col-12 col-lg-3 mb-4 mb-lg-0 d-none d-lg-block">
+        <div class="account-sidebar">
+          <div class="user-info">
+            <div class="user-avatar">
+              <img src="images/user-avatar.jpg" alt="User Avatar">
+              <div class="online-indicator"></div>
+            </div>
+            <h3>Guest User</h3>
+            <p>Premium Member</p>
+            <div class="user-stats">
+              <div class="user-stat">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Orders</span>
+              </div>
+              <div class="user-stat">
+                <span class="stat-number">4.8</span>
+                <span class="stat-label">Rating</span>
+              </div>
+            </div>
+          </div>
+          <ul class="account-menu">
+            <li><a href="transaction-history.html" class="active"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile Settings</a></li>
+            <li><a href="addresses.html"><i class="fas fa-map-marker-alt"></i> Addresses</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Account Content -->
+      <div class="col-12 col-lg-9">
+        <div class="account-content">
+          <div class="content-header">
+            <div class="header-left">
+              <h2><i class="fas fa-shopping-bag"></i> My Orders</h2>
+              <p>Track and manage your recent purchases</p>
+            </div>
+            <div class="header-actions">
+              <div class="search-orders">
+                <input type="text" placeholder="Search orders..." id="order-search">
+                <i class="fas fa-search"></i>
+              </div>
+              <div class="filter-options">
+                <select id="order-filter" aria-label="Filter orders">
+                  <option value="all">All Orders</option>
+                  <option value="processing">Processing</option>
+                  <option value="shipped">Shipped</option>
+                  <option value="delivered">Delivered</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="orders-list">
+            <div class="order-item">
+              <div class="order-header">
+                <div class="order-info">
+                  <div class="order-number">
+                    <i class="fas fa-receipt"></i>
+                    <div>
+                      <span class="label">Order #</span>
+                      <strong>ADS12345678</strong>
+                    </div>
+                  </div>
+                  <div class="order-date">
+                    <i class="fas fa-calendar"></i>
+                    <div>
+                      <span class="label">Date</span>
+                      <strong>May 15, 2025</strong>
+                    </div>
+                  </div>
+                  <div class="order-total-header">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div>
+                      <span class="label">Total</span>
+                      <strong>$307.00</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge delivered">
+                    <i class="fas fa-check-circle"></i>
+                    Delivered
+                  </span>
+                </div>
+              </div>
+              
+              <div class="order-timeline">
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Order Placed</span>
+                </div>
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Processing</span>
+                </div>
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Shipped</span>
+                </div>
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Delivered</span>
+                </div>
+              </div>
+
+              <div class="order-products">
+                <div class="order-product">
+                  <div class="product-image">
+                    <img src="images/product1.jpg" alt="Adidas Ultraboost">
+                  </div>
+                  <div class="product-details">
+                    <h3>Adidas Ultraboost 22</h3>
+                    <p><span class="detail-label">Size:</span> 9 | <span class="detail-label">Color:</span> Black</p>
+                    <div class="product-price">
+                      <span class="quantity">1 ×</span>
+                      <span class="price">$180.00</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button class="btn-action" title="Rate Product">
+                      <i class="fas fa-star"></i>
+                    </button>
+                    <button class="btn-action" title="Buy Again">
+                      <i class="fas fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="order-product">
+                  <div class="product-image">
+                    <img src="images/product2.jpg" alt="Adidas Superstar">
+                  </div>
+                  <div class="product-details">
+                    <h3>Adidas Superstar</h3>
+                    <p><span class="detail-label">Size:</span> 8.5 | <span class="detail-label">Color:</span> White</p>
+                    <div class="product-price">
+                      <span class="quantity">1 ×</span>
+                      <span class="price">$90.00</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button class="btn-action" title="Rate Product">
+                      <i class="fas fa-star"></i>
+                    </button>
+                    <button class="btn-action" title="Buy Again">
+                      <i class="fas fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="order-footer">
+                <div class="order-summary">
+                  <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span>$270.00</span>
+                  </div>
+                  <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span>$15.00</span>
+                  </div>
+                  <div class="summary-item">
+                    <span>Tax:</span>
+                    <span>$22.00</span>
+                  </div>
+                  <div class="summary-item total">
+                    <span>Total:</span>
+                    <strong>$307.00</strong>
+                  </div>
+                </div>
+                <div class="order-actions">
+                  <a href="order-detail.html?id=ADS12345678" class="btn btn-outline">
+                    <i class="fas fa-eye"></i>
+                    View Details
+                  </a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-truck"></i>
+                    Track Order
+                  </button>
+                  <button class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Invoice
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <div class="order-header">
+                <div class="order-info">
+                  <div class="order-number">
+                    <i class="fas fa-receipt"></i>
+                    <div>
+                      <span class="label">Order #</span>
+                      <strong>ADS87654321</strong>
+                    </div>
+                  </div>
+                  <div class="order-date">
+                    <i class="fas fa-calendar"></i>
+                    <div>
+                      <span class="label">Date</span>
+                      <strong>April 28, 2025</strong>
+                    </div>
+                  </div>
+                  <div class="order-total-header">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div>
+                      <span class="label">Total</span>
+                      <strong>$154.00</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge shipped">
+                    <i class="fas fa-truck"></i>
+                    Shipped
+                  </span>
+                </div>
+              </div>
+              
+              <div class="order-timeline">
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Order Placed</span>
+                </div>
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Processing</span>
+                </div>
+                <div class="timeline-item active">
+                  <div class="timeline-icon"><i class="fas fa-truck"></i></div>
+                  <span>Shipped</span>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon"><i class="fas fa-circle"></i></div>
+                  <span>Delivered</span>
+                </div>
+              </div>
+
+              <div class="order-products">
+                <div class="order-product">
+                  <div class="product-image">
+                    <img src="images/product3.jpg" alt="Adidas NMD">
+                  </div>
+                  <div class="product-details">
+                    <h3>Adidas NMD R1</h3>
+                    <p><span class="detail-label">Size:</span> 9.5 | <span class="detail-label">Color:</span> Blue</p>
+                    <div class="product-price">
+                      <span class="quantity">1 ×</span>
+                      <span class="price">$140.00</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button class="btn-action" title="Rate Product">
+                      <i class="fas fa-star"></i>
+                    </button>
+                    <button class="btn-action" title="Buy Again">
+                      <i class="fas fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="order-footer">
+                <div class="order-summary">
+                  <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span>$140.00</span>
+                  </div>
+                  <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span>$14.00</span>
+                  </div>
+                  <div class="summary-item total">
+                    <span>Total:</span>
+                    <strong>$154.00</strong>
+                  </div>
+                </div>
+                <div class="order-actions">
+                  <a href="order-detail.html?id=ADS87654321" class="btn btn-outline">
+                    <i class="fas fa-eye"></i>
+                    View Details
+                  </a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-truck"></i>
+                    Track Order
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <div class="order-header">
+                <div class="order-info">
+                  <div class="order-number">
+                    <i class="fas fa-receipt"></i>
+                    <div>
+                      <span class="label">Order #</span>
+                      <strong>ADS24681357</strong>
+                    </div>
+                  </div>
+                  <div class="order-date">
+                    <i class="fas fa-calendar"></i>
+                    <div>
+                      <span class="label">Date</span>
+                      <strong>April 10, 2025</strong>
+                    </div>
+                  </div>
+                  <div class="order-total-header">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div>
+                      <span class="label">Total</span>
+                      <strong>$203.50</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge delivered">
+                    <i class="fas fa-check-circle"></i>
+                    Delivered
+                  </span>
+                </div>
+              </div>
+              
+              <div class="order-timeline">
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Order Placed</span>
+                </div>
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Processing</span>
+                </div>
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Shipped</span>
+                </div>
+                <div class="timeline-item completed">
+                  <div class="timeline-icon"><i class="fas fa-check"></i></div>
+                  <span>Delivered</span>
+                </div>
+              </div>
+
+              <div class="order-products">
+                <div class="order-product">
+                  <div class="product-image">
+                    <img src="images/product4.jpg" alt="Adidas Stan Smith">
+                  </div>
+                  <div class="product-details">
+                    <h3>Adidas Stan Smith</h3>
+                    <p><span class="detail-label">Size:</span> 8 | <span class="detail-label">Color:</span> White/Green</p>
+                    <div class="product-price">
+                      <span class="quantity">1 ×</span>
+                      <span class="price">$85.00</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button class="btn-action rated" title="Rated">
+                      <i class="fas fa-star"></i>
+                    </button>
+                    <button class="btn-action" title="Buy Again">
+                      <i class="fas fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="order-product">
+                  <div class="product-image">
+                    <img src="images/product5.jpg" alt="Adidas Gazelle">
+                  </div>
+                  <div class="product-details">
+                    <h3>Adidas Gazelle</h3>
+                    <p><span class="detail-label">Size:</span> 8 | <span class="detail-label">Color:</span> Black</p>
+                    <div class="product-price">
+                      <span class="quantity">1 ×</span>
+                      <span class="price">$100.00</span>
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <button class="btn-action rated" title="Rated">
+                      <i class="fas fa-star"></i>
+                    </button>
+                    <button class="btn-action" title="Buy Again">
+                      <i class="fas fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="order-footer">
+                <div class="order-summary">
+                  <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span>$185.00</span>
+                  </div>
+                  <div class="summary-item">
+                    <span>Shipping:</span>
+                    <span>$15.00</span>
+                  </div>
+                  <div class="summary-item">
+                    <span>Tax:</span>
+                    <span>$3.50</span>
+                  </div>
+                  <div class="summary-item total">
+                    <span>Total:</span>
+                    <strong>$203.50</strong>
+                  </div>
+                </div>
+                <div class="order-actions">
+                  <a href="order-detail.html?id=ADS24681357" class="btn btn-outline">
+                    <i class="fas fa-eye"></i>
+                    View Details
+                  </a>
+                  <button class="btn btn-success">
+                    <i class="fas fa-redo"></i>
+                    Buy Again
+                  </button>
+                  <button class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Invoice
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="pagination">
+            <button class="btn-page" data-page="prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="page-numbers">
+              <button class="btn-page active" data-page="1">1</button>
+              <button class="btn-page" data-page="2">2</button>
+              <button class="btn-page" data-page="3">3</button>
+            </div>
+            <button class="btn-page" data-page="next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/adidas-logo-white.png" alt="Adidas Logo">
+          <p>IMPOSSIBLE IS NOTHING</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="transaction-history.html">Order History</a></li>
+            <li><a href="#">Store Locator</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adidas Store. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/transaction-history.js"></script>
+  <script>
+  // Mobile account menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('account-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-account-menu');
+    
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>

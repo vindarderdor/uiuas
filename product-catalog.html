@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Store - Product Catalog</title>
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/adidas-logo.png" alt="Adidas Logo">
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html" class="active">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="nav-mobile">
+      <div class="nav-mobile-header">
+        <div class="logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+        </div>
+        <button class="nav-mobile-close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product-catalog.html" class="active">Products</a></li>
+        <li><a href="article-archive.html">Articles</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Product Catalog</h1>
+      <p>Explore our wide range of Adidas products</p>
+    </div>
+  </section>
+
+  <section class="product-catalog py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar Filters - Collapses on mobile -->
+        <div class="col-12 col-lg-3">
+          <div class="catalog-sidebar">
+            <div class="d-lg-none mb-4">
+              <button class="btn btn-secondary w-100" id="filter-toggle">
+                <i class="fas fa-filter"></i> Show Filters
+              </button>
+            </div>
+            
+            <div class="filter-container" id="filter-container">
+              <div class="filter-section">
+                <h3>Categories</h3>
+                <ul class="filter-list">
+                  <li><a href="#" data-category="all" class="active">All Products</a></li>
+                  <li><a href="#" data-category="shoes">Shoes</a></li>
+                  <li><a href="#" data-category="clothing">Clothing</a></li>
+                  <li><a href="#" data-category="accessories">Accessories</a></li>
+                </ul>
+              </div>
+              
+              <div class="filter-section">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                  <input type="range" min="0" max="300" value="300" class="price-slider" id="price-slider">
+                  <div class="price-values">
+                    <span>$0</span>
+                    <span id="price-value">$300</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="filter-section">
+                <h3>Sort By</h3>
+                <select id="sort-by" class="form-select">
+                  <option value="default">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="newest">Newest</option>
+                </select>
+              </div>
+              
+              <button class="btn btn-primary w-100 mt-4" id="apply-filters">Apply Filters</button>
+              
+              <div class="d-lg-none mt-3">
+                <button class="btn btn-secondary w-100" id="close-filters">Close Filters</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Grid -->
+        <div class="col-12 col-lg-9">
+          <div class="catalog-products">
+            <div class="product-grid" id="product-grid">
+              <!-- Products will be loaded dynamically via JavaScript -->
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="https://i.pinimg.com/736x/13/e8/04/13e80417467e2561eb7b0a2d2b577e51.jpg" alt="Adidas Ultraboost">
+                  <div class="product-overlay">
+                    <a href="product-detail.html?id=1" class="btn-view">View Details</a>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Adidas Ultraboost 22</h3>
+                  <p class="price">$180</p>
+                  <button class="btn-add-cart" data-id="1">Add to Cart</button>
+                </div>
+              </div>
+              
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="https://i.pinimg.com/736x/9e/99/5f/9e995f39d9b8df8d194d8a29e658a031.jpg" alt="Adidas Superstar">
+                  <div class="product-overlay">
+                    <a href="product-detail.html?id=2" class="btn-view">View Details</a>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Adidas Superstar</h3>
+                  <p class="price">$90</p>
+                  <button class="btn-add-cart" data-id="2">Add to Cart</button>
+                </div>
+              </div>
+              
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="https://i.pinimg.com/736x/b3/29/ff/b329ffffe0175dc7d9920d8bca711d51.jpg" alt="Adidas NMD">
+                  <div class="product-overlay">
+                    <a href="product-detail.html?id=3" class="btn-view">View Details</a>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Adidas NMD R1</h3>
+                  <p class="price">$140</p>
+                  <button class="btn-add-cart" data-id="3">Add to Cart</button>
+                </div>
+              </div>
+              
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="https://i.pinimg.com/736x/63/7a/86/637a86671f1ad8d258765c64194d2d02.jpg" alt="Adidas Stan Smith">
+                  <div class="product-overlay">
+                    <a href="product-detail.html?id=4" class="btn-view">View Details</a>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Adidas Stan Smith</h3>
+                  <p class="price">$85</p>
+                  <button class="btn-add-cart" data-id="4">Add to Cart</button>
+                </div>
+              </div>
+              
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="https://i.pinimg.com/736x/4a/6d/7b/4a6d7b32f80250487c30bbb6b1fa1bd6.jpg" alt="Adidas Gazelle">
+                  <div class="product-overlay">
+                    <a href="product-detail.html?id=5" class="btn-view">View Details</a>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Adidas Gazelle</h3>
+                  <p class="price">$100</p>
+                  <button class="btn-add-cart" data-id="5">Add to Cart</button>
+                </div>
+              </div>
+              
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="https://i.pinimg.com/736x/5e/02/fe/5e02fe30910f5c65d5f6de5779fa6649.jpg" alt="Adidas Forum">
+                  <div class="product-overlay">
+                    <a href="product-detail.html?id=6" class="btn-view">View Details</a>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3>Adidas Forum Low</h3>
+                  <p class="price">$95</p>
+                  <button class="btn-add-cart" data-id="6">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pagination mt-5">
+              <button class="btn-page" data-page="prev" disabled><i class="fas fa-chevron-left"></i></button>
+              <div class="page-numbers">
+                <button class="btn-page active" data-page="1">1</button>
+                <button class="btn-page" data-page="2">2</button>
+                <button class="btn-page" data-page="3">3</button>
+              </div>
+              <button class="btn-page" data-page="next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+          <p>IMPOSSIBLE IS NOTHING</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="transaction-history.html">Order History</a></li>
+            <li><a href="#">Store Locator</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adidas Store. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Navigation for Mobile -->
+  <div class="bottom-nav d-block d-lg-none">
+    <a href="index.html" class="bottom-nav-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="product-catalog.html" class="bottom-nav-item active">
+      <i class="fas fa-box"></i>
+      <span>Products</span>
+    </a>
+    <a href="article-archive.html" class="bottom-nav-item">
+      <i class="fas fa-newspaper"></i>
+      <span>Articles</span>
+    </a>
+    <a href="cart.html" class="bottom-nav-item">
+      <i class="fas fa-shopping-cart"></i>
+      <span>Cart</span>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMobile = document.getElementById('nav-mobile');
+      const navClose = document.getElementById('nav-close');
+      const navOverlay = document.getElementById('nav-overlay');
+      
+      // Open mobile menu
+      menuToggle.addEventListener('click', function() {
+        navMobile.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Close mobile menu
+      function closeMenu() {
+        navMobile.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      navClose.addEventListener('click', closeMenu);
+      navOverlay.addEventListener('click', closeMenu);
+      
+      // Filter toggle for mobile
+      const filterToggle = document.getElementById('filter-toggle');
+      const filterContainer = document.getElementById('filter-container');
+      const closeFilters = document.getElementById('close-filters');
+      
+      if (filterToggle && filterContainer) {
+        filterToggle.addEventListener('click', function() {
+          filterContainer.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        });
+        
+        if (closeFilters) {
+          closeFilters.addEventListener('click', function() {
+            filterContainer.classList.remove('show');
+            document.body.style.overflow = '';
+          });
+        }
+      }
+      
+      // Price slider
+      const priceSlider = document.getElementById('price-slider');
+      const priceValue = document.getElementById('price-value');
+      
+      if (priceSlider && priceValue) {
+        priceSlider.addEventListener('input', function() {
+          priceValue.textContent = '$' + this.value;
+        });
+      }
+      
+      // Apply filters
+      const applyFilters = document.getElementById('apply-filters');
+      
+      if (applyFilters) {
+        applyFilters.addEventListener('click', function() {
+          // Apply filters logic here
+          
+          // Close filter on mobile
+          if (window.innerWidth < 992) {
+            filterContainer.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

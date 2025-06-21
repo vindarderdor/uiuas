@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Store - Shopping Cart</title>
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/adidas-logo.png" alt="Adidas Logo">
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+          </ul>
+        </nav>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="nav-mobile">
+      <div class="nav-mobile-header">
+        <div class="logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+        </div>
+        <button class="nav-mobile-close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product-catalog.html">Products</a></li>
+        <li><a href="article-archive.html">Articles</a></li>
+        <li><a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Shopping Cart</h1>
+      <p>Review your items and proceed to checkout</p>
+    </div>
+  </section>
+
+  <section class="shopping-cart py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Cart Items -->
+        <div class="col-12 col-lg-8 mb-5 mb-lg-0">
+          <div class="cart-content">
+            <div class="cart-items">
+              <div class="cart-header d-none d-md-flex">
+                <div class="cart-col product-col">Product</div>
+                <div class="cart-col price-col">Price</div>
+                <div class="cart-col quantity-col">Quantity</div>
+                <div class="cart-col total-col">Total</div>
+                <div class="cart-col action-col"></div>
+              </div>
+              
+              <div class="cart-body" id="cart-items-container">
+                <!-- Cart items will be loaded dynamically via JavaScript -->
+              </div>
+              
+              <div class="cart-empty" id="cart-empty" style="display: none;">
+                <div class="empty-cart-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added any products to your cart yet.</p>
+                <a href="product-catalog.html" class="btn">Continue Shopping</a>
+              </div>
+            </div>
+            
+            <div class="cart-actions mt-4">
+              <div class="coupon">
+                <input type="text" placeholder="Coupon Code" aria-label="Coupon code">
+                <button class="btn">Apply Coupon</button>
+              </div>
+              <button class="btn btn-secondary">Update Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cart Summary -->
+        <div class="col-12 col-lg-4">
+          <div class="cart-summary">
+            <h2>Cart Summary</h2>
+            <div class="summary-item">
+              <span>Subtotal</span>
+              <span id="cart-subtotal">$270.00</span>
+            </div>
+            <div class="summary-item">
+              <span>Shipping</span>
+              <span id="cart-shipping">$10.00</span>
+            </div>
+            <div class="summary-item discount" id="discount-row" style="display: none;">
+              <span>Discount</span>
+              <span id="cart-discount">-$0.00</span>
+            </div>
+            <div class="summary-item total">
+              <span>Total</span>
+              <span id="cart-total">$280.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-checkout">Proceed to Checkout</a>
+            <a href="product-catalog.html" class="continue-shopping">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Recommended Products -->
+      <section class="recommended-products mt-5">
+        <h2 class="text-center mb-4">You May Also Like</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://i.pinimg.com/736x/b3/29/ff/b329ffffe0175dc7d9920d8bca711d51.jpg" alt="Adidas NMD">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=3" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas NMD R1</h3>
+              <p class="price">$140</p>
+              <button class="btn-add-cart" data-id="3" data-name="Adidas NMD R1" data-price="140" data-image="https://i.pinimg.com/736x/b3/29/ff/b329ffffe0175dc7d9920d8bca711d51.jpg">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://i.pinimg.com/736x/63/7a/86/637a86671f1ad8d258765c64194d2d02.jpg" alt="Adidas Stan Smith">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=4" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas Stan Smith</h3>
+              <p class="price">$85</p>
+              <button class="btn-add-cart" data-id="4" data-name="Adidas Stan Smith" data-price="85" data-image="https://i.pinimg.com/736x/63/7a/86/637a86671f1ad8d258765c64194d2d02.jpg">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://i.pinimg.com/736x/4a/6d/7b/4a6d7b32f80250487c30bbb6b1fa1bd6.jpg" alt="Adidas Gazelle">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=5" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas Gazelle</h3>
+              <p class="price">$100</p>
+              <button class="btn-add-cart" data-id="5" data-name="Adidas Gazelle" data-price="100" data-image="https://i.pinimg.com/736x/4a/6d/7b/4a6d7b32f80250487c30bbb6b1fa1bd6.jpg">Add to Cart</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://i.pinimg.com/736x/5e/02/fe/5e02fe30910f5c65d5f6de5779fa6649.jpg" alt="Adidas Forum">
+              <div class="product-overlay">
+                <a href="product-detail.html?id=6" class="btn-view">View Details</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Adidas Forum Low</h3>
+              <p class="price">$95</p>
+              <button class="btn-add-cart" data-id="6" data-name="Adidas Forum Low" data-price="95" data-image="https://i.pinimg.com/736x/5e/02/fe/5e02fe30910f5c65d5f6de5779fa6649.jpg">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+          <p>IMPOSSIBLE IS NOTHING</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="transaction-history.html">Order History</a></li>
+            <li><a href="#">Store Locator</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adidas Store. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Navigation for Mobile -->
+  <div class="bottom-nav d-block d-lg-none">
+    <a href="index.html" class="bottom-nav-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="product-catalog.html" class="bottom-nav-item">
+      <i class="fas fa-box"></i>
+      <span>Products</span>
+    </a>
+    <a href="article-archive.html" class="bottom-nav-item">
+      <i class="fas fa-newspaper"></i>
+      <span>Articles</span>
+    </a>
+    <a href="cart.html" class="bottom-nav-item active">
+      <i class="fas fa-shopping-cart"></i>
+      <span>Cart <span class="cart-count">0</span></span>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMobile = document.getElementById('nav-mobile');
+      const navClose = document.getElementById('nav-close');
+      const navOverlay = document.getElementById('nav-overlay');
+      
+      // Open mobile menu
+      menuToggle.addEventListener('click', function() {
+        navMobile.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Close mobile menu
+      function closeMenu() {
+        navMobile.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      navClose.addEventListener('click', closeMenu);
+      navOverlay.addEventListener('click', closeMenu);
+      
+      // Initialize cart
+      loadCartItems();
+      updateCartCount();
+      
+      // Coupon functionality
+      const couponInput = document.querySelector('.coupon input');
+      const couponBtn = document.querySelector('.coupon .btn');
+      
+      if (couponBtn) {
+        couponBtn.addEventListener('click', function() {
+          const couponCode = couponInput.value.trim().toUpperCase();
+          applyCoupon(couponCode);
+        });
+      }
+      
+      // Update cart button
+      const updateCartBtn = document.querySelector('.btn-secondary');
+      if (updateCartBtn) {
+        updateCartBtn.addEventListener('click', function() {
+          updateCartFromInputs();
+          showNotification('Cart updated successfully!');
+        });
+      }
+      
+      // Add to Cart Buttons in Recommended Products
+      const addToCartBtns = document.querySelectorAll('.recommended-products .btn-add-cart');
+      
+      if (addToCartBtns.length > 0) {
+        addToCartBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            const productName = this.getAttribute('data-name');
+            const productPrice = parseFloat(this.getAttribute('data-price'));
+            const productImage = this.getAttribute('data-image');
+            
+            // Add visual feedback
+            this.classList.add('adding');
+            
+            // Simulate a slight delay for better UX
+            setTimeout(() => {
+              // Add to cart
+              addToCart({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImage
+              });
+              
+              this.classList.remove('adding');
+              this.classList.add('added');
+              
+              setTimeout(() => {
+                this.classList.remove('added');
+              }, 1500);
+            }, 300);
+          });
+        });
+      }
+      
+      // Load cart items from localStorage
+      function loadCartItems() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartEmpty = document.getElementById('cart-empty');
+        
+        if (cart.length === 0) {
+          cartEmpty.style.display = 'block';
+          cartItemsContainer.style.display = 'none';
+          updateCartTotals();
+          return;
+        }
+        
+        cartEmpty.style.display = 'none';
+        cartItemsContainer.style.display = 'block';
+        cartItemsContainer.innerHTML = '';
+        
+        cart.forEach(item => {
+          const cartItemHTML = `
+            <div class="cart-item" data-id="${item.id}">
+              <div class="cart-col product-col" data-label="Product">
+                <div class="cart-product">
+                  <div class="product-image">
+                    <img src="${item.image}" alt="${item.name}">
+                  </div>
+                  <div class="product-details">
+                    <h3>${item.name}</h3>
+                    <p>Size: ${item.size || 'N/A'} | Color: ${item.color || 'N/A'}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-col price-col" data-label="Price">$${item.price.toFixed(2)}</div>
+              <div class="cart-col quantity-col" data-label="Quantity">
+                <div class="quantity">
+                  <button class="qty-btn" data-action="decrease" aria-label="Decrease quantity">-</button>
+                  <input type="number" value="${item.quantity}" min="1" class="qty-input" aria-label="Product quantity">
+                  <button class="qty-btn" data-action="increase" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+              <div class="cart-col total-col" data-label="Total">$${(item.price * item.quantity).toFixed(2)}</div>
+              <div class="cart-col action-col" data-label="Action">
+                <button class="btn-remove" aria-label="Remove item"><i class="fas fa-trash-alt"></i></button>
+              </div>
+            </div>
+          `;
+          
+          cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
+        });
+        
+        // Add event listeners to newly created elements
+        addCartEventListeners();
+        updateCartTotals();
+      }
+      
+      // Add event listeners to cart elements
+      function addCartEventListeners() {
+        // Quantity buttons
+        const qtyBtns = document.querySelectorAll('.qty-btn');
+        qtyBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const action = this.getAttribute('data-action');
+            const input = this.parentElement.querySelector('.qty-input');
+            const cartItem = this.closest('.cart-item');
+            const productId = cartItem.getAttribute('data-id');
+            let value = parseInt(input.value);
+            
+            if (action === 'decrease' && value > 1) {
+              value -= 1;
+            } else if (action === 'increase') {
+              value += 1;
+            }
+            
+            input.value = value;
+            updateCartItemInStorage(productId, value);
+            updateCartItemTotal(cartItem);
+          });
+        });
+        
+        // Quantity inputs
+        const qtyInputs = document.querySelectorAll('.qty-input');
+        qtyInputs.forEach(input => {
+          input.addEventListener('change', function() {
+            const cartItem = this.closest('.cart-item');
+            const productId = cartItem.getAttribute('data-id');
+            const value = Math.max(1, parseInt(this.value) || 1);
+            
+            this.value = value;
+            updateCartItemInStorage(productId, value);
+            updateCartItemTotal(cartItem);
+          });
+        });
+        
+        // Remove buttons
+        const removeBtns = document.querySelectorAll('.btn-remove');
+        removeBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to remove this item from your cart?')) {
+              const cartItem = this.closest('.cart-item');
+              const productId = cartItem.getAttribute('data-id');
+              
+              cartItem.classList.add('removing');
+              
+              setTimeout(() => {
+                removeFromCart(productId);
+                loadCartItems();
+                updateCartCount();
+              }, 300);
+            }
+          });
+        });
+      }
+      
+      // Update cart item quantity in localStorage
+      function updateCartItemInStorage(productId, quantity) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const itemIndex = cart.findIndex(item => item.id === productId);
+        
+        if (itemIndex !== -1) {
+          cart[itemIndex].quantity = quantity;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartCount();
+        }
+      }
+      
+      // Update cart item total
+      function updateCartItemTotal(cartItem) {
+        if (!cartItem) return;
+        
+        const priceEl = cartItem.querySelector('.price-col');
+        const quantityEl = cartItem.querySelector('.qty-input');
+        const totalEl = cartItem.querySelector('.total-col');
+        
+        if (priceEl && quantityEl && totalEl) {
+          const price = parseFloat(priceEl.textContent.replace('$', ''));
+          const quantity = parseInt(quantityEl.value);
+          const total = price * quantity;
+          
+          totalEl.textContent = '$' + total.toFixed(2);
+          updateCartTotals();
+        }
+      }
+      
+      // Update cart from input values
+      function updateCartFromInputs() {
+        const cartItems = document.querySelectorAll('.cart-item');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        cartItems.forEach(cartItem => {
+          const productId = cartItem.getAttribute('data-id');
+          const quantityInput = cartItem.querySelector('.qty-input');
+          const quantity = parseInt(quantityInput.value);
+          
+          const itemIndex = cart.findIndex(item => item.id === productId);
+          if (itemIndex !== -1) {
+            cart[itemIndex].quantity = quantity;
+          }
+        });
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        updateCartTotals();
+      }
+      
+      // Apply coupon
+      function applyCoupon(couponCode) {
+        const validCoupons = {
+          'SAVE10': 0.10,
+          'WELCOME20': 0.20,
+          'STUDENT15': 0.15,
+          'FIRST25': 0.25
+        };
+        
+        const discountRow = document.getElementById('discount-row');
+        const discountEl = document.getElementById('cart-discount');
+        
+        if (validCoupons[couponCode]) {
+          const subtotal = calculateSubtotal();
+          const discount = subtotal * validCoupons[couponCode];
+          
+          if (discountEl && discountRow) {
+            discountEl.textContent = '-$' + discount.toFixed(2);
+            discountRow.style.display = 'flex';
+            
+            // Store applied coupon
+            localStorage.setItem('appliedCoupon', JSON.stringify({
+              code: couponCode,
+              discount: validCoupons[couponCode]
+            }));
+            
+            updateCartTotals();
+            showNotification(`Coupon ${couponCode} applied! You saved $${discount.toFixed(2)}`);
+          }
+        } else {
+          showNotification('Invalid coupon code. Please try again.');
+        }
+      }
+      
+      // Calculate subtotal
+      function calculateSubtotal() {
+        let subtotal = 0;
+        const cartItems = document.querySelectorAll('.cart-item');
+        
+        cartItems.forEach(item => {
+          const totalText = item.querySelector('.total-col').textContent;
+          subtotal += parseFloat(totalText.replace('$', ''));
+        });
+        
+        return subtotal;
+      }
+      
+      // Update cart totals
+      function updateCartTotals() {
+        const subtotalEl = document.getElementById('cart-subtotal');
+        const shippingEl = document.getElementById('cart-shipping');
+        const discountEl = document.getElementById('cart-discount');
+        const discountRow = document.getElementById('discount-row');
+        const totalEl = document.getElementById('cart-total');
+        
+        if (subtotalEl && shippingEl && totalEl) {
+          const subtotal = calculateSubtotal();
+          const shipping = subtotal > 100 ? 0 : 10; // Free shipping over $100
+          
+          // Check for applied coupon
+          const appliedCoupon = JSON.parse(localStorage.getItem('appliedCoupon'));
+          let discount = 0;
+          
+          if (appliedCoupon && discountEl && discountRow) {
+            discount = subtotal * appliedCoupon.discount;
+            discountEl.textContent = '-$' + discount.toFixed(2);
+            discountRow.style.display = 'flex';
+          } else if (discountRow) {
+            discountRow.style.display = 'none';
+          }
+          
+          const total = subtotal + shipping - discount;
+          
+          subtotalEl.textContent = '$' + subtotal.toFixed(2);
+          shippingEl.textContent = shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2);
+          totalEl.textContent = '$' + total.toFixed(2);
+          
+          // Update shipping message
+          updateShippingMessage(subtotal);
+        }
+      }
+      
+      // Update shipping message
+      function updateShippingMessage(subtotal) {
+        let shippingMessage = document.querySelector('.shipping-message');
+        
+        if (!shippingMessage) {
+          shippingMessage = document.createElement('div');
+          shippingMessage.className = 'shipping-message';
+          document.querySelector('.cart-summary').insertBefore(shippingMessage, document.querySelector('.btn-checkout'));
+        }
+        
+        if (subtotal < 100) {
+          const remaining = 100 - subtotal;
+          shippingMessage.innerHTML = `<p><i class="fas fa-truck"></i> Add $${remaining.toFixed(2)} more for FREE shipping!</p>`;
+          shippingMessage.style.display = 'block';
+        } else {
+          shippingMessage.innerHTML = `<p><i class="fas fa-check-circle"></i> You qualify for FREE shipping!</p>`;
+          shippingMessage.style.display = 'block';
+        }
+      }
+      
+      // Remove from cart
+      function removeFromCart(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter(item => item.id !== productId);
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+      
+      // Add to cart function
+      function addToCart(product) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingProductIndex = cart.findIndex(item => item.id === product.id);
+        
+        if (existingProductIndex !== -1) {
+          cart[existingProductIndex].quantity += 1;
+        } else {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: 1,
+            size: product.size || 'N/A',
+            color: product.color || 'N/A'
+          });
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        loadCartItems();
+        showAddToCartNotification(product);
+      }
+      
+      // Update cart count
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const count = cart.reduce((total, item) => total + item.quantity, 0);
+        
+        const cartCountElements = document.querySelectorAll('.cart-count');
+        cartCountElements.forEach(element => {
+          const prevCount = parseInt(element.textContent) || 0;
+          element.textContent = count;
+          
+          if (count > prevCount) {
+            element.classList.add('pulse');
+            setTimeout(() => {
+              element.classList.remove('pulse');
+            }, 500);
+          }
+        });
+      }
+      
+      // Show notification
+      function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.style.opacity = '1';
+          notification.style.transform = 'translateY(0)';
+        }, 10);
+        
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          notification.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            document.body.removeChild(notification);
+          }, 300);
+        }, 3000);
+      }
+      
+      // Show add to cart notification
+      function showAddToCartNotification(product) {
+        let notificationContainer = document.getElementById('cart-notification-container');
+        if (!notificationContainer) {
+          notificationContainer = document.createElement('div');
+          notificationContainer.id = 'cart-notification-container';
+          notificationContainer.className = 'cart-notification-container';
+          document.body.appendChild(notificationContainer);
+        }
+        
+        const notification = document.createElement('div');
+        notification.className = 'cart-notification';
+        
+        notification.innerHTML = `
+          <div class="notification-product">
+            <img src="${product.image}" alt="${product.name}" class="notification-image">
+            <div class="notification-details">
+              <p class="notification-message">${product.name} added to cart!</p>
+              <p class="notification-price">$${product.price.toFixed(2)}</p>
+            </div>
+          </div>
+          <div class="notification-actions">
+            <button class="notification-continue">Continue Shopping</button>
+            <a href="cart.html" class="notification-view-cart">View Cart</a>
+          </div>
+        `;
+        
+        notificationContainer.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.classList.add('show');
+        }, 10);
+        
+        const continueBtn = notification.querySelector('.notification-continue');
+        if (continueBtn) {
+          continueBtn.addEventListener('click', () => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+              notificationContainer.removeChild(notification);
+            }, 300);
+          });
+        }
+        
+        const timeout = setTimeout(() => {
+          notification.classList.remove('show');
+          setTimeout(() => {
+            if (notification.parentNode === notificationContainer) {
+              notificationContainer.removeChild(notification);
+            }
+          }, 300);
+        }, 5000);
+        
+        notification.addEventListener('mouseenter', () => {
+          clearTimeout(timeout);
+        });
+        
+        notification.addEventListener('mouseleave', () => {
+          const newTimeout = setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+              if (notification.parentNode === notificationContainer) {
+                notificationContainer.removeChild(notification);
+              }
+            }, 300);
+          }, 3000);
+          
+          notification.addEventListener('mouseenter', () => {
+            clearTimeout(newTimeout);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

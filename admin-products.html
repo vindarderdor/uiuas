@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Store - Product Management</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="admin-body">
+  <div class="admin-container">
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <div class="admin-logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+        </div>
+        <h2>Admin Panel</h2>
+      </div>
+      <nav class="admin-nav">
+        <ul>
+          <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+          <li><a href="admin-products.html" class="active"><i class="fas fa-box"></i> <span>Products</span></a></li>
+          <li><a href="admin-articles.html"><i class="fas fa-newspaper"></i> <span>Articles</span></a></li>
+          <li><a href="admin-users.html"><i class="fas fa-users"></i> <span>Users</span></a></li>
+          <li><a href="admin-orders.html"><i class="fas fa-shopping-cart"></i> <span>Orders</span></a></li>
+          <li><a href="admin-settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="index.html" target="_blank"><i class="fas fa-external-link-alt"></i> <span>View Store</span></a>
+        <a href="#" id="admin-logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-header">
+        <div class="header-search">
+          <input type="text" placeholder="Search products...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-actions">
+          <div class="notifications">
+            <button class="notification-btn"><i class="far fa-bell"></i><span class="badge">3</span></button>
+          </div>
+          <div class="admin-user">
+            <img src="images/admin-avatar.jpg" alt="Admin Avatar">
+            <span>Admin User</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+      <div class="admin-content">
+        <div class="page-header">
+          <h1>Product Management</h1>
+          <div class="page-actions">
+            <button class="btn-primary" id="add-product-btn"><i class="fas fa-plus"></i> Add New Product</button>
+            <button class="btn-secondary"><i class="fas fa-download"></i> Export</button>
+          </div>
+        </div>
+        
+        <div class="admin-filters">
+          <div class="filter-group">
+            <label>Filter by Category:</label>
+            <select>
+              <option value="all">All Categories</option>
+              <option value="footwear">Footwear</option>
+              <option value="clothing">Clothing</option>
+              <option value="accessories">Accessories</option>
+              <option value="sports">Sports</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Filter by Status:</label>
+            <select>
+              <option value="all">All Status</option>
+              <option value="in-stock">In Stock</option>
+              <option value="low-stock">Low Stock</option>
+              <option value="out-of-stock">Out of Stock</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Sort by:</label>
+            <select>
+              <option value="newest">Newest First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name-asc">Name (A-Z)</option>
+              <option value="name-desc">Name (Z-A)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="admin-card">
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" id="select-all">
+                  </th>
+                  <th>Product</th>
+                  <th>SKU</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>
+                    <div class="product-info">
+                      <img src="https://i.pinimg.com/736x/13/e8/04/13e80417467e2561eb7b0a2d2b577e51.jpg" alt="Product">
+                      <span>Adidas Ultraboost 21</span>
+                    </div>
+                  </td>
+                  <td>ADS-UB21-BLK</td>
+                  <td>Footwear</td>
+                  <td>$180.00</td>
+                  <td>125</td>
+                  <td><span class="status-badge in-stock">In Stock</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon edit-btn" title="Edit Product"><i class="fas fa-edit"></i></button>
+                      <button class="btn-icon view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                      <button class="btn-icon delete-btn" title="Delete Product"><i class="fas fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>
+                    <div class="product-info">
+                      <img src="https://i.pinimg.com/736x/83/fc/22/83fc2285b8f1e38e98d285aac9ea4c14.jpg" alt="Product">
+                      <span>Adidas Originals Trefoil Hoodie</span>
+                    </div>
+                  </td>
+                  <td>ADS-HOOD-RED</td>
+                  <td>Clothing</td>
+                  <td>$65.00</td>
+                  <td>78</td>
+                  <td><span class="status-badge in-stock">In Stock</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon edit-btn" title="Edit Product"><i class="fas fa-edit"></i></button>
+                      <button class="btn-icon view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                      <button class="btn-icon delete-btn" title="Delete Product"><i class="fas fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>
+                    <div class="product-info">
+                      <img src="https://i.pinimg.com/736x/c8/c4/66/c8c466db819f19ffa9cb9ad880fe452b.jpg" alt="Product">
+                      <span>Adidas Predator Edge Soccer Cleats</span>
+                    </div>
+                  </td>
+                  <td>ADS-PRED-BLU</td>
+                  <td>Footwear</td>
+                  <td>$220.00</td>
+                  <td>12</td>
+                  <td><span class="status-badge low-stock">Low Stock</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon edit-btn" title="Edit Product"><i class="fas fa-edit"></i></button>
+                      <button class="btn-icon view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                      <button class="btn-icon delete-btn" title="Delete Product"><i class="fas fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>
+                    <div class="product-info">
+                      <img src="https://i.pinimg.com/736x/a0/2e/a7/a02ea7445e8a1acca3d39ced2b9f3ac1.jpg" alt="Product">
+                      <span>Adidas Classic Backpack</span>
+                    </div>
+                  </td>
+                  <td>ADS-BACK-BLK</td>
+                  <td>Accessories</td>
+                  <td>$45.00</td>
+                  <td>0</td>
+                  <td><span class="status-badge out-of-stock">Out of Stock</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon edit-btn" title="Edit Product"><i class="fas fa-edit"></i></button>
+                      <button class="btn-icon view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                      <button class="btn-icon delete-btn" title="Delete Product"><i class="fas fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-item"></td>
+                  <td>
+                    <div class="product-info">
+                      <img src="https://i.pinimg.com/736x/d3/0e/aa/d30eaa203edfb5f5c24a845c7e523d37.jpg" alt="Product">
+                      <span>Adidas Tiro 21 Training Pants</span>
+                    </div>
+                  </td>
+                  <td>ADS-TIRO-BLK</td>
+                  <td>Clothing</td>
+                  <td>$50.00</td>
+                  <td>89</td>
+                  <td><span class="status-badge in-stock">In Stock</span></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-icon edit-btn" title="Edit Product"><i class="fas fa-edit"></i></button>
+                      <button class="btn-icon view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                      <button class="btn-icon delete-btn" title="Delete Product"><i class="fas fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="pagination">
+            <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="page-ellipsis">...</span>
+            <button class="page-btn">10</button>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Product Form Modal -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add New Product</h2>
+        <button class="close-modal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="product-form">
+          <div class="form-tabs">
+            <button type="button" class="form-tab active" data-tab="basic-info">Basic Info</button>
+            <button type="button" class="form-tab" data-tab="inventory">Inventory</button>
+            <button type="button" class="form-tab" data-tab="images">Images</button>
+            <button type="button" class="form-tab" data-tab="attributes">Attributes</button>
+          </div>
+          
+          <div class="form-tab-content active" id="basic-info">
+            <div class="form-group">
+              <label for="product-name">Product Name</label>
+              <input type="text" id="product-name" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="product-sku">SKU</label>
+                <input type="text" id="product-sku" required>
+              </div>
+              <div class="form-group">
+                <label for="product-category">Category</label>
+                <select id="product-category" required>
+                  <option value="">Select Category</option>
+                  <option value="footwear">Footwear</option>
+                  <option value="clothing">Clothing</option>
+                  <option value="accessories">Accessories</option>
+                  <option value="sports">Sports</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="product-price">Price ($)</label>
+                <input type="number" id="product-price" min="0" step="0.01" required>
+              </div>
+              <div class="form-group">
+                <label for="product-sale-price">Sale Price ($)</label>
+                <input type="number" id="product-sale-price" min="0" step="0.01">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product-description">Description</label>
+              <textarea id="product-description" rows="5" required></textarea>
+            </div>
+          </div>
+          
+          <div class="form-tab-content" id="inventory">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="product-stock">Stock Quantity</label>
+                <input type="number" id="product-stock" min="0" required>
+              </div>
+              <div class="form-group">
+                <label for="product-status">Status</label>
+                <select id="product-status" required>
+                  <option value="in-stock">In Stock</option>
+                  <option value="out-of-stock">Out of Stock</option>
+                  <option value="backorder">On Backorder</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="product-weight">Weight (kg)</label>
+                <input type="number" id="product-weight" min="0" step="0.01">
+              </div>
+              <div class="form-group">
+                <label for="product-dimensions">Dimensions (L × W × H)</label>
+                <input type="text" id="product-dimensions" placeholder="e.g., 10 × 5 × 3 cm">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product-low-stock">Low Stock Threshold</label>
+              <input type="number" id="product-low-stock" min="0">
+            </div>
+          </div>
+          
+          <div class="form-tab-content" id="images">
+            <div class="form-group">
+              <label>Product Images</label>
+              <div class="image-upload-container">
+                <div class="image-upload-box">
+                  <input type="file" id="product-image-main" accept="image/*" hidden>
+                  <label for="product-image-main" class="image-upload-label">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Main Image</span>
+                  </label>
+                </div>
+                <div class="image-upload-box">
+                  <input type="file" id="product-image-1" accept="image/*" hidden>
+                  <label for="product-image-1" class="image-upload-label">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Image</span>
+                  </label>
+                </div>
+                <div class="image-upload-box">
+                  <input type="file" id="product-image-2" accept="image/*" hidden>
+                  <label for="product-image-2" class="image-upload-label">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Image</span>
+                  </label>
+                </div>
+                <div class="image-upload-box">
+                  <input type="file" id="product-image-3" accept="image/*" hidden>
+                  <label for="product-image-3" class="image-upload-label">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Image</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-tab-content" id="attributes">
+            <div class="form-group">
+              <label>Available Sizes</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="size" value="XS"> XS
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="size" value="S"> S
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="size" value="M"> M
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="size" value="L"> L
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="size" value="XL"> XL
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="size" value="XXL"> XXL
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Available Colors</label>
+              <div class="color-selector">
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="black">
+                  <span class="color-swatch" style="background-color: #000;"></span>
+                  <span class="color-name">Black</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="white">
+                  <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
+                  <span class="color-name">White</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="red">
+                  <span class="color-swatch" style="background-color: #e74c3c;"></span>
+                  <span class="color-name">Red</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="blue">
+                  <span class="color-swatch" style="background-color: #3498db;"></span>
+                  <span class="color-name">Blue</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="green">
+                  <span class="color-swatch" style="background-color: #2ecc71;"></span>
+                  <span class="color-name">Green</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product-tags">Tags</label>
+              <input type="text" id="product-tags" placeholder="Enter tags separated by commas">
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" class="btn-secondary cancel-btn">Cancel</button>
+            <button type="submit" class="btn-primary">Save Product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script>
+    // Product management specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const productModal = document.getElementById('product-modal');
+      const addProductBtn = document.getElementById('add-product-btn');
+      const closeModalBtn = document.querySelector('.close-modal');
+      const cancelBtn = document.querySelector('.cancel-btn');
+      const productForm = document.getElementById('product-form');
+      const formTabs = document.querySelectorAll('.form-tab');
+      const formTabContents = document.querySelectorAll('.form-tab-content');
+      const editBtns = document.querySelectorAll('.edit-btn');
+      const deleteBtns = document.querySelectorAll('.delete-btn');
+      const selectAll = document.getElementById('select-all');
+      const selectItems = document.querySelectorAll('.select-item');
+      
+      // Open modal
+      addProductBtn.addEventListener('click', function() {
+        productModal.style.display = 'flex';
+        document.querySelector('.modal-header h2').textContent = 'Add New Product';
+        productForm.reset();
+      });
+      
+      // Close modal
+      function closeModal() {
+        productModal.style.display = 'none';
+      }
+      
+      closeModalBtn.addEventListener('click', closeModal);
+      cancelBtn.addEventListener('click', closeModal);
+      
+      // Close modal when clicking outside
+      window.addEventListener('click', function(event) {
+        if (event.target === productModal) {
+          closeModal();
+        }
+      });
+      
+      // Form tabs
+      formTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          // Remove active class from all tabs and contents
+          formTabs.forEach(t => t.classList.remove('active'));
+          formTabContents.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked tab and corresponding content
+          this.classList.add('active');
+          document.getElementById(this.dataset.tab).classList.add('active');
+        });
+      });
+      
+      // Form submission
+      productForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would normally send the data to the server
+        alert('Product saved successfully!');
+        closeModal();
+      });
+      
+      // Edit product
+      editBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const row = this.closest('tr');
+          const name = row.querySelector('.product-info span').textContent;
+          const sku = row.cells[2].textContent;
+          const category = row.cells[3].textContent;
+          const price = row.cells[4].textContent.replace('$', '');
+          
+          // Populate form
+          document.getElementById('product-name').value = name;
+          document.getElementById('product-sku').value = sku;
+          document.getElementById('product-category').value = category.toLowerCase();
+          document.getElementById('product-price').value = price;
+          
+          // Change modal title
+          document.querySelector('.modal-header h2').textContent = 'Edit Product';
+          
+          // Show modal
+          productModal.style.display = 'flex';
+        });
+      });
+      
+      // Delete product
+      deleteBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (confirm('Are you sure you want to delete this product?')) {
+            // Here you would normally send a delete request to the server
+            this.closest('tr').remove();
+            alert('Product deleted successfully!');
+          }
+        });
+      });
+      
+      // Select all functionality
+      selectAll.addEventListener('change', function() {
+        selectItems.forEach(item => {
+          item.checked = this.checked;
+        });
+      });
+      
+      // Image upload preview
+      const imageInputs = document.querySelectorAll('input[type="file"]');
+      imageInputs.forEach(input => {
+        input.addEventListener('change', function() {
+          if (this.files && this.files[0]) {
+            const reader = new FileReader();
+            const label = this.nextElementSibling;
+            
+            reader.onload = function(e) {
+              label.innerHTML = `<img src="${e.target.result}" alt="Product Image">`;
+              label.classList.add('has-image');
+            };
+            
+            reader.readAsDataURL(this.files[0]);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

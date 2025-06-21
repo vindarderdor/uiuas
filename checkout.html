@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Store - Checkout</title>
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/adidas-logo.png" alt="Adidas Logo">
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="nav-mobile">
+      <div class="nav-mobile-header">
+        <div class="logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+        </div>
+        <button class="nav-mobile-close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product-catalog.html">Products</a></li>
+        <li><a href="article-archive.html">Articles</a></li>
+        <li><a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Checkout</h1>
+      <p>Complete your purchase</p>
+    </div>
+  </section>
+
+  <section class="checkout py-5">
+    <div class="container">
+      <div class="checkout-steps">
+        <div class="step active">
+          <div class="step-number">1</div>
+          <div class="step-title">Shipping</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-title">Payment</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-title">Confirmation</div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <!-- Checkout Form -->
+        <div class="col-12 col-lg-8 mb-5 mb-lg-0">
+          <div class="checkout-form">
+            <div class="step-content active" id="shipping-step">
+              <h2>Shipping Information</h2>
+              <form id="shipping-form">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="first-name">First Name</label>
+                      <input type="text" id="first-name" required>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="last-name">Last Name</label>
+                      <input type="text" id="last-name" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="address">Street Address</label>
+                  <input type="text" id="address" required>
+                </div>
+                
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="city">City</label>
+                      <input type="text" id="city" required>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="state">State/Province</label>
+                      <input type="text" id="state" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="zip">Zip/Postal Code</label>
+                      <input type="text" id="zip" required>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label for="country">Country</label>
+                      <select id="country" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="JP">Japan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="shipping-method">Shipping Method</label>
+                  <div class="shipping-options">
+                    <div class="shipping-option">
+                      <input type="radio" name="shipping" id="standard" value="standard" checked>
+                      <label for="standard">
+                        <div class="option-info">
+                          <span class="option-name">Standard Shipping</span>
+                          <span class="option-price">$10.00</span>
+                        </div>
+                        <span class="option-description">Delivery in 5-7 business days</span>
+                      </label>
+                    </div>
+                    
+                    <div class="shipping-option">
+                      <input type="radio" name="shipping" id="express" value="express">
+                      <label for="express">
+                        <div class="option-info">
+                          <span class="option-name">Express Shipping</span>
+                          <span class="option-price">$20.00</span>
+                        </div>
+                        <span class="option-description">Delivery in 2-3 business days</span>
+                      </label>
+                    </div>
+                    
+                    <div class="shipping-option">
+                      <input type="radio" name="shipping" id="overnight" value="overnight">
+                      <label for="overnight">
+                        <div class="option-info">
+                          <span class="option-name">Overnight Shipping</span>
+                          <span class="option-price">$30.00</span>
+                        </div>
+                        <span class="option-description">Delivery the next business day</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-actions">
+                  <a href="cart.html" class="btn btn-secondary">Back to Cart</a>
+                  <button type="submit" class="btn btn-primary">Continue to Payment</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="step-content" id="payment-step">
+              <h2>Payment Information</h2>
+              <form id="payment-form">
+                <div class="payment-methods">
+                  <div class="payment-method">
+                    <input type="radio" name="payment" id="credit-card" value="credit-card" checked>
+                    <label for="credit-card">Credit Card</label>
+                  </div>
+                  
+                  <div class="payment-method">
+                    <input type="radio" name="payment" id="paypal" value="paypal">
+                    <label for="paypal">PayPal</label>
+                  </div>
+                  
+                  <div class="payment-method">
+                    <input type="radio" name="payment" id="apple-pay" value="apple-pay">
+                    <label for="apple-pay">Apple Pay</label>
+                  </div>
+                </div>
+                
+                <div class="payment-details" id="credit-card-details">
+                  <div class="form-group">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="XXX" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="payment-details" id="paypal-details" style="display: none;">
+                  <p>You will be redirected to PayPal to complete your payment.</p>
+                </div>
+                
+                <div class="payment-details" id="apple-pay-details" style="display: none;">
+                  <p>You will be prompted to complete your payment with Apple Pay.</p>
+                </div>
+                
+                <div class="form-group">
+                  <label for="billing-address">Billing Address</label>
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="same-address" checked>
+                    <label for="same-address">Same as shipping address</label>
+                  </div>
+                </div>
+                
+                <div id="billing-address-form" style="display: none;">
+                  <!-- Billing address form fields -->
+                </div>
+                
+                <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" id="back-to-shipping">Back to Shipping</button>
+                  <button type="submit" class="btn btn-primary">Place Order</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="step-content" id="confirmation-step">
+              <div class="order-confirmation">
+                <div class="confirmation-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Thank You for Your Order!</h2>
+                <p>Your order has been placed successfully. We've sent a confirmation email to <span id="confirmation-email">example@email.com</span>.</p>
+                <div class="order-details">
+                  <p><strong>Order Number:</strong> <span id="order-number">ADS12345678</span></p>
+                  <p><strong>Estimated Delivery:</strong> <span id="delivery-date">May 25, 2025</span></p>
+                </div>
+                <div class="confirmation-actions">
+                  <a href="transaction-history.html" class="btn btn-primary">View Order</a>
+                  <a href="index.html" class="btn btn-secondary">Continue Shopping</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Order Summary -->
+        <div class="col-12 col-lg-4">
+          <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-items">
+              <div class="summary-item">
+                <div class="item-image">
+                  <img src="https://i.pinimg.com/736x/13/e8/04/13e80417467e2561eb7b0a2d2b577e51.jpg" alt="Adidas Ultraboost">
+                </div>
+                <div class="item-details">
+                  <h3>Adidas Ultraboost 22</h3>
+                  <p>Size: 9 | Color: Black</p>
+                  <div class="item-price">
+                    <span class="quantity">1 ×</span>
+                    <span class="price">$180.00</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="summary-item">
+                <div class="item-image">
+                  <img src="https://i.pinimg.com/736x/9e/99/5f/9e995f39d9b8df8d194d8a29e658a031.jpg" alt="Adidas Superstar">
+                </div>
+                <div class="item-details">
+                  <h3>Adidas Superstar</h3>
+                  <p>Size: 8.5 | Color: White</p>
+                  <div class="item-price">
+                    <span class="quantity">1 ×</span>
+                    <span class="price">$90.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="summary-totals">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span>$270.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span id="shipping-cost">$10.00</span>
+              </div>
+              <div class="summary-row discount" id="discount-row" style="display: none;">
+                <span>Discount</span>
+                <span id="discount-amount">-$0.00</span>
+              </div>
+              <div class="summary-row tax">
+                <span>Tax</span>
+                <span>$27.00</span>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <span id="order-total">$307.00</span>
+              </div>
+            </div>
+            
+            <div class="promo-code">
+              <input type="text" placeholder="Promo Code">
+              <button class="btn btn-secondary">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/adidas-logo.png" alt="Adidas Logo">
+          <p>IMPOSSIBLE IS NOTHING</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product-catalog.html">Products</a></li>
+            <li><a href="article-archive.html">Articles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="transaction-history.html">Order History</a></li>
+            <li><a href="#">Store Locator</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Adidas Store. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Navigation for Mobile -->
+  <div class="bottom-nav d-block d-lg-none">
+    <a href="index.html" class="bottom-nav-item">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="product-catalog.html" class="bottom-nav-item">
+      <i class="fas fa-box"></i>
+      <span>Products</span>
+    </a>
+    <a href="article-archive.html" class="bottom-nav-item">
+      <i class="fas fa-newspaper"></i>
+      <span>Articles</span>
+    </a>
+    <a href="cart.html" class="bottom-nav-item active">
+      <i class="fas fa-shopping-cart"></i>
+      <span>Cart</span>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMobile = document.getElementById('nav-mobile');
+      const navClose = document.getElementById('nav-close');
+      const navOverlay = document.getElementById('nav-overlay');
+      
+      // Open mobile menu
+      menuToggle.addEventListener('click', function() {
+        navMobile.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Close mobile menu
+      function closeMenu() {
+        navMobile.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      navClose.addEventListener('click', closeMenu);
+      navOverlay.addEventListener('click', closeMenu);
+      
+      // Checkout Steps
+      const shippingForm = document.getElementById('shipping-form');
+      const paymentForm = document.getElementById('payment-form');
+      const backToShippingBtn = document.getElementById('back-to-shipping');
+      const steps = document.querySelectorAll('.step');
+      const stepContents = document.querySelectorAll('.step-content');
+      
+      // Shipping form submission
+      if (shippingForm) {
+        shippingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Go to payment step
+          goToStep(1);
+        });
+      }
+      
+      // Payment form submission
+      if (paymentForm) {
+        paymentForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Go to confirmation step
+          goToStep(2);
+          
+          // Set confirmation email
+          const emailInput = document.getElementById('email');
+          const confirmationEmail = document.getElementById('confirmation-email');
+          
+          if (emailInput && confirmationEmail) {
+            confirmationEmail.textContent = emailInput.value;
+          }
+          
+          // Set order number (random for demo)
+          const orderNumber = document.getElementById('order-number');
+          if (orderNumber) {
+            orderNumber.textContent = 'ADS' + Math.floor(Math.random() * 90000000 + 10000000);
+          }
+          
+          // Set delivery date (current date + shipping days)
+          const deliveryDate = document.getElementById('delivery-date');
+          if (deliveryDate) {
+            const shippingDays = document.querySelector('input[name="shipping"]:checked').value === 'standard' ? 7 : 
+                               document.querySelector('input[name="shipping"]:checked').value === 'express' ? 3 : 1;
+            
+            const date = new Date();
+            date.setDate(date.getDate() + shippingDays);
+            
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            deliveryDate.textContent = date.toLocaleDateString('en-US', options);
+          }
+        });
+      }
+      
+      // Back to shipping button
+      if (backToShippingBtn) {
+        backToShippingBtn.addEventListener('click', function() {
+          goToStep(0);
+        });
+      }
+      
+      // Function to go to a specific step
+      function goToStep(stepIndex) {
+        // Update steps
+        steps.forEach((step, index) => {
+          if (index <= stepIndex) {
+            step.classList.add('active');
+          } else {
+            step.classList.remove('active');
+          }
+        });
+        
+        // Update step content
+        stepContents.forEach((content, index) => {
+          if (index === stepIndex) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      }
+      
+      // Payment method selection
+      const paymentMethods = document.querySelectorAll('input[name="payment"]');
+      const paymentDetails = document.querySelectorAll('.payment-details');
+      
+      if (paymentMethods.length > 0) {
+        paymentMethods.forEach(method => {
+          method.addEventListener('change', function() {
+            // Hide all payment details
+            paymentDetails.forEach(detail => {
+              detail.style.display = 'none';
+            });
+            
+            // Show selected payment details
+            const selectedMethod = this.value;
+            document.getElementById(selectedMethod + '-details').style.display = 'block';
+          });
+        });
+      }
+      
+      // Same as shipping address checkbox
+      const sameAddressCheckbox = document.getElementById('same-address');
+      const billingAddressForm = document.getElementById('billing-address-form');
+      
+      if (sameAddressCheckbox && billingAddressForm) {
+        sameAddressCheckbox.addEventListener('change', function() {
+          if (this.checked) {
+            billingAddressForm.style.display = 'none';
+          } else {
+            billingAddressForm.style.display = 'block';
+          }
+        });
+      }
+      
+      // Shipping method selection
+      const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+      const shippingCost = document.getElementById('shipping-cost');
+      const orderTotal = document.getElementById('order-total');
+      
+      if (shippingOptions.length > 0 && shippingCost && orderTotal) {
+        shippingOptions.forEach(option => {
+          option.addEventListener('change', function() {
+            let cost = 10;
+            
+            if (this.value === 'express') {
+              cost = 20;
+            } else if (this.value === 'overnight') {
+              cost = 30;
+            }
+            
+            // Update shipping cost
+            shippingCost.textContent = '$' + cost.toFixed(2);
+            
+            // Update order total
+            const subtotal = 270; // Fixed for demo
+            const tax = 27; // Fixed for demo
+            const total = subtotal + cost + tax;
+            
+            orderTotal.textContent = '$' + total.toFixed(2);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
